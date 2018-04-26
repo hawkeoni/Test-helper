@@ -1,17 +1,13 @@
-import re
+import os
 
-def get_answer_line(answer):
-	#impossible to improve, as answers may contain -
-	#See splitter.py for example
-	start = answer.find('+')
-	return answer[start:].replace('\n', '')
+from flask import Flask, request
+from utils import get_answer
 
-
+app = Flask(__name__, root_path=os.getcwd())
 text = open('questions.txt').read()
 questions = text.split('Class')
-while True:
-	query = str(input())
-	for question in questions:
-		if query in question:
-			print(get_answer_line(question))
-			print('---------')
+
+@app.route('/')
+def application():
+	query = request.args.get('query')
+	return get_answer(query, questions)
