@@ -1,0 +1,1 @@
+document.onmouseup = function() {alert(window.getSelection().toString());};
