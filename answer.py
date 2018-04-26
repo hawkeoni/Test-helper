@@ -1,10 +1,12 @@
+# encoding=utf8
+
 import os
 
 from flask import Flask, request
 from utils import get_answer
 
 app = Flask(__name__, root_path=os.getcwd())
-text = open('questions.txt').read()
+text = open('questions.txt', encoding='utf-8').read()
 questions = text.split('Class')
 
 @app.route('/')
