@@ -11,3 +11,7 @@ questions = text.split('Class')
 def application():
 	query = request.args.get('query')
 	return get_answer(query, questions)
+
+
+if __name__ == '__main__':
+	app.run(host='0.0.0.0')
