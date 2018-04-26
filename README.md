@@ -7,3 +7,5 @@ A simple server to help with CMC 3d course networking test
 3. Multiple questions with the same statement. E.g. "Ниже приведены формулы..."
 4. Попросить протестировать
 5. Ansible для развертки где-угодно
+6. Lowercase
+7. System independent
