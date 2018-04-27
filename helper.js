@@ -11,7 +11,6 @@ window.onkeydown = function(key){
 	if (key.keyCode==83){
 		var selection = window.getSelection();
 		var tmp = selection.toString();
-		document.title = tmp;
 		query = encodeURIComponent(tmp);
 		xhr.open('GET', 'http://185.224.215.223/?query=' + query, true);
 		xhr.send();		
