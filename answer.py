@@ -11,7 +11,7 @@ app = Flask(__name__, root_path=os.getcwd())
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 text = open('questions.txt', encoding='utf-8').read().lower()
 questions = text.split('class a.')
-script = open('helper.js').read()
+script = open('helper.min.js').read()
 
 
 @app.route('/')
