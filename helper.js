@@ -1,16 +1,26 @@
-document.onmouseup = function() {alert(window.getSelection().toString());};
-
-javascript:(function(){
-	var r = new XMLHttpRequest();
-	r.open('GET', 'http://185.224.215.223:5000/?query= из ответов правильный? При значении конфигурационного регистра 0x2142 ма');
-	r.send();
-	alert(r.response);
-})();
-
-#стоит подгружать js
-
-
-query = encodeURIComponent('Как называется стандартный интерфейс Gigabit Ethernet');
-var x = new XMLHttpRequest();
-x.open('GET', 'http://185.224.215.223:5000/?query=' + query);
-x.send();
+title = document.title;
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+	if (xhr.readyState ===4){
+		if (xhr.status==200){
+			document.title = xhr.response;
+		}
+	}
+}
+window.onkeydown = function(key){
+	if (key.keyCode==83){
+		var selection = window.getSelection();
+		var tmp = selection.toString();
+		document.title = tmp;
+		query = encodeURIComponent(tmp);
+		xhr.open('GET', 'http://185.224.215.223/?query=' + query, true);
+		xhr.send();		
+	}
+	if (key.keyCode==68){
+		document.title=title;
+	}
+	if (key.keyCode==70){
+		document.title=title;
+		window.onkeydown=null;
+	}
+}

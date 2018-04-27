@@ -6,8 +6,9 @@ def get_answer_line(answer):
 
 def get_answer(query, list_db):
 	result = ''
+	query = query.lower()
 	for entry in list_db:
 		if query in entry:
-			result += '<p>' + get_answer_line(entry) + '</p>'
-			result += '<p>---------</p>'
+			result += get_answer_line(entry)
+			result += '|||||'
 	return result

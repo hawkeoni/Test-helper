@@ -9,9 +9,9 @@ from utils import get_answer
 
 app = Flask(__name__, root_path=os.getcwd())
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
-text = open('questions.txt', encoding='utf-8').read()
+text = open('questions.txt', encoding='utf-8').read().lower()
 questions = text.split('Class')
-script = open('helpme.js').read()
+script = open('helper.js').read()
 
 
 @app.route('/')
@@ -23,6 +23,9 @@ def answer():
 def give_script():
 	return script
 
+@app.route('/test')
+def test():
+	return text
 
 if __name__ == '__main__':
 	app.run(host='127.0.0.1')
