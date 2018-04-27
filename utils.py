@@ -7,9 +7,7 @@ def get_answer_line(answer):
 def get_answer(query, list_db):
 	result = ''
 	query = query.lower()
-	print(query)
 	for entry in list_db:
-		print(entry)
 		if query in entry:
 			result += get_answer_line(entry)
 			result += '&&&&&&&&&'
