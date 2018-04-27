@@ -12,7 +12,7 @@ window.onkeydown = function(key){
 		var selection = window.getSelection();
 		var tmp = selection.toString();
 		query = encodeURIComponent(tmp);
-		xhr.open('GET', 'http://185.224.215.223/?query=' + query, true);
+		xhr.open('GET', 'https://geokompas.tk/?query=' + query, true);
 		xhr.send();		
 	}
 	if (key.keyCode==68){
