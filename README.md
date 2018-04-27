@@ -9,3 +9,7 @@ A simple server to help with CMC 3d course networking test
 5. Ansible для развертки где-угодно
 6. Lowercase
 7. System independent
+8. CORS bypass
+9. http/https
+10. 1-2 ошибки
+11. Нужно подгружать js, который отправляет кроссдоменные запросы.
