@@ -11,5 +11,4 @@ def get_answer(query, list_db):
 		if query in entry:
 			result += get_answer_line(entry)
 			result += '&&&&&&&&&'
-			break
 	return result
