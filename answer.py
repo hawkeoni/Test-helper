@@ -12,7 +12,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 text = open('questions.txt', encoding='utf-8').read().lower()
 questions = text.split('class a.')
 script = open('helper.min.js').read()
-
+includer = open('includer.js').read()
 
 @app.route('/')
 def answer():
@@ -26,6 +26,10 @@ def give_script():
 @app.route('/test')
 def test():
 	return text
+
+@app.route('/includer')
+def give():
+	return incliuder
 
 if __name__ == '__main__':
 	app.run(host='127.0.0.1')
