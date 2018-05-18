@@ -29,7 +29,7 @@ def test():
 
 @app.route('/includer')
 def give():
-	return incliuder
+	return includer
 
 if __name__ == '__main__':
 	app.run(host='127.0.0.1')
